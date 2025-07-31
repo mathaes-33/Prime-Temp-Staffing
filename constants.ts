@@ -1,5 +1,5 @@
 
-import { Job } from './types';
+import { Job, JobCategory, EmploymentType } from './types';
 
 // Helper to get future/past dates
 const getDate = (days: number): string => {
@@ -7,6 +7,10 @@ const getDate = (days: number): string => {
   date.setDate(date.getDate() + days);
   return date.toISOString();
 }
+
+export const EMPLOYMENT_TYPES: EmploymentType[] = ['Full-time', 'Part-time', 'Contract', 'Temporary'];
+export const JOB_CATEGORIES: JobCategory[] = ['Technology', 'Design', 'Administrative', 'Management', 'Marketing', 'Finance', 'Healthcare'];
+
 
 export const INITIAL_JOBS: Job[] = [
   {
