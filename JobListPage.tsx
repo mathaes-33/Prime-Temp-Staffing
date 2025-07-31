@@ -1,4 +1,3 @@
-
 import React, { useState, useMemo, useEffect } from 'react';
 import { useJobs } from '../context/JobContext';
 import JobCard from '../components/JobCard';
