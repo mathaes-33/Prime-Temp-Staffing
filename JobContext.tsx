@@ -6,6 +6,7 @@ import { INITIAL_JOBS } from '../constants';
 interface JobContextType {
   jobs: Job[];
   deleteJob: (jobId: string) => void;
+  updateJob: (updatedJob: Job) => void;
   loading: boolean;
 }
 
@@ -46,8 +47,12 @@ export const JobProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
     setJobs(currentJobs => currentJobs.filter(job => job.id !== jobId));
   };
 
+  const updateJob = (updatedJob: Job) => {
+    setJobs(currentJobs => currentJobs.map(job => job.id === updatedJob.id ? updatedJob : job));
+  };
+
   return (
-    <JobContext.Provider value={{ jobs, deleteJob, loading }}>
+    <JobContext.Provider value={{ jobs, deleteJob, updateJob, loading }}>
       {children}
     </JobContext.Provider>
   );
