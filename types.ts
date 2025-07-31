@@ -1,11 +1,14 @@
 
+export type EmploymentType = 'Full-time' | 'Part-time' | 'Contract' | 'Temporary';
+export type JobCategory = 'Technology' | 'Design' | 'Administrative' | 'Management' | 'Marketing' | 'Finance' | 'Healthcare';
+
 export interface Job {
   id: string;
   title: string;
   company: string;
   location: string;
-  employmentType: 'Full-time' | 'Part-time' | 'Contract' | 'Temporary';
-  category: string;
+  employmentType: EmploymentType;
+  category: JobCategory;
   description: string;
   responsibilities: string[];
   requirements: string[];
